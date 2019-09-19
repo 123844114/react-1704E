@@ -1,0 +1,13 @@
+.box{
+    border: 1px solid red;
+    padding: 20px 10px;
+    .btn{
+        padding: 5px 10px;
+        background: #008bff;
+        color: #fff;
+        margin: 0 10px;
+        &.active{
+            background: red
+        }
+    }
+}

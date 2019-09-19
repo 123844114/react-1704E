@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.js"></script>
+    <script src="./js/reactdom.js"></script>
+    <script src="./js/babel.js"></script>
+</head>
+
+<body>
+    <div id='app'></div>
+    <script type='text/babel'>
+        console.log(React.Component)
+        class Ul extends React.Component{
+        //    constructor(props){
+        //        super(props)
+        //        //state自身状态   --马上下学啦
+        //        this.state={msg:'今天周六'}
+        //        //props是外边的状态
+        //        console.log(this.props)
+        //    }
+        state={msg:'今天周六'}
+        //    changeState(){
+        //        console.log(this)
+        //     //    this.state.msg='马上下学了'
+        //        this.setState({msg:'马上下学了'})
+        //    }
+        // es7的写法
+            changeState=()=>{
+                this.setState({msg:'马上下学了'})
+            }
+        //    changeState:function(){}
+            render(){
+                return <h1 onClick={this.changeState}>{this.state.msg}</h1>;
+            }
+        }
+        ReactDOM.render(<Ul title='1704E'/>,document.getElementById('app'))
+    </script>
+</body>
+
+</html>

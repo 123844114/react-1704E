@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/react.js"></script>
+    <script src="./js/reactdom.js"></script>
+    <script src="./js/babel.js"></script>
+    <style>
+        .box {
+            border: 1px solid red;
+        }
+
+        .bar {
+            overflow: hidden;
+        }
+
+        .bar span {
+            padding: 10px;
+            display: inline-block
+        }
+
+        .active {
+            background: red
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'></div>
+    <script type='text/babel'>
+        let data=[{
+            title:'家用电器',
+            content:{
+                img:'https://ecmb.bdimg.com/tam-ogel/e3a6032f4070e60eaafeef834d25ecdc_254_96.jpg',
+                txt:'心里有你'
+            }
+        },{
+            title:'手机通讯',
+            content:{
+                img:'https://ss0.bdstatic.com/-0U0bnSm1A5BphGlnYG/tam-ogel/3765df5827e62310b327eb91eb7e437e_254_96.jpg',
+                txt:'818手机节'
+            }
+        }]
+        class Tab extends React.Component{
+            state={index:0}
+            render(){
+                let {data} = this.props
+                let {index} =this.state
+              return <div className='box'>
+                    <div className='bar'>
+                        {data.map((item,i)=><span key={i} onClick={this.tabFn.bind(this,i)} className={i===index?'active':''}>{item.title}</span>)}
+                    </div>
+                    <div className='content'>
+                        <img src={data[index].content.img} alt=""/>
+                        <p>{data[index].content.txt}</p>
+                    </div>
+                </div>  
+            }
+            //tab功能
+            tabFn(index){
+                console.log(index)
+                this.setState({index})
+            }
+        }
+        ReactDOM.render(<Tab data={data}/>,document.getElementById('app'))
+    </script>
+</body>
+
+</html>

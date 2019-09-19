@@ -1,0 +1,39 @@
+html,body,#root{
+    width: 100%;
+    height: 100%;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none
+}
+.mafengwo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    height: 40px;
+    background: red
+}
+.main{
+    flex: 1;
+    overflow: auto
+}
+.footer{
+    width:100%;
+    display: flex;
+    justify-content: space-around
+}
+.footer a{
+    flex:1;
+    text-align: center;
+    color: #333
+}
+.footer .active{
+    color: red
+}
